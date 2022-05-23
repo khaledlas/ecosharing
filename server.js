@@ -19,16 +19,15 @@ app.use("/api/quidproquos", quidproquoRouter);
 //   res.sendFile(path.join(__dirname, "server.js"));
 // });
 
-//HEROKU
-// Accessing the path module
-const path = require("path");
-
-// Step 1:
-app.use(express.static(path.resolve(__dirname, "./client/build")));
-// Step 2:
-app.get("*", function (request, response) {
-  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
-});
+// server static assets if in production
+if(process.env.NODE_ENV === 'production'){    
+    app.use(express.static('frontend/build'))  // set static folder 
+    //returning frontend for any route other than api 
+    app.get('*',(req,res)=>{     
+        res.sendFile (path.resolve(__dirname,'frontend','build',         
+                      'index.html' ));    
+    });
+}
 
 app.listen(
   PORT,
