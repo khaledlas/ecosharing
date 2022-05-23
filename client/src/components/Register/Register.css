@@ -1,0 +1,47 @@
+.register {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    
+    font-size: 30px;
+}
+
+.formulaire{
+   
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        align-items: center;
+        background-color: white;
+       
+        margin-top: 50px;
+        margin-bottom: 100px;
+        width: 500px;
+        border-radius: 10px;
+
+}
+
+
+
+
+.registerButton {
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    background-color: #1775ee;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    
+}

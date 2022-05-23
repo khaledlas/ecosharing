@@ -18,6 +18,18 @@ app.use("/api/quidproquos", quidproquoRouter);
 // app.get("/*", function (req, res) {
 //   res.sendFile(path.join(__dirname, "server.js"));
 // });
+
+//HEROKU
+// Accessing the path module
+const path = require("path");
+
+// Step 1:
+app.use(express.static(path.resolve(__dirname, "./client/build")));
+// Step 2:
+app.get("*", function (request, response) {
+  response.sendFile(path.resolve(__dirname, "./client/build", "index.html"));
+});
+
 app.listen(
   PORT,
   console.log(`Server is up and running on http://localhost:${PORT}`)

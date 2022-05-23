@@ -1,0 +1,17 @@
+.avatar-fullname{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 20px auto;
+    width: 700px;
+    padding: 20px;
+    align-items: center;
+}
+
+.addquidproquo{
+    display: block;
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 1px solid red;
+}
